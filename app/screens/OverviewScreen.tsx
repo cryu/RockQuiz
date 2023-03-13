@@ -4,6 +4,7 @@ import { Text, TextStyle, View, ViewStyle } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
+import { Button } from "react-native-paper"
 
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../models"
@@ -18,6 +19,9 @@ export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps<"Overview">
     return (
       <View style={$container}>
         <Text style={$welcomeHeading}>Welcome to RockQuiz!</Text>
+        <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
+          Press me
+        </Button>
       </View>
     )
   },
