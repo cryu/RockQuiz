@@ -28,9 +28,9 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
  *   https://reactnavigation.org/docs/typescript/#organizing-types
  */
 export type AppStackParamList = {
-  Welcome: undefined
-  // 🔥 Your screens go here
-  Overview: undefined
+    Welcome: undefined
+    // 🔥 Your screens go here
+    Overview: undefined
 }
 
 /**
@@ -40,37 +40,36 @@ export type AppStackParamList = {
 const exitRoutes = Config.exitRoutes
 
 export type AppStackScreenProps<T extends keyof AppStackParamList> = StackScreenProps<
-  AppStackParamList,
-  T
+    AppStackParamList,
+    T
 >
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
 const Stack = createNativeStackNavigator<AppStackParamList>()
 
 const AppStack = observer(function AppStack() {
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="Welcome" component={WelcomeScreen} /> */}
-      {/** 🔥 Your screens go here */}
-      <Stack.Screen name="Overview" component={OverviewScreen} />
-    </Stack.Navigator>
-  )
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            {/* <Stack.Screen name="Welcome" component={WelcomeScreen} /> */}
+            {/** 🔥 Your screens go here */}
+            <Stack.Screen name="Overview" component={OverviewScreen} />
+        </Stack.Navigator>
+    )
 })
 
 type NavigationProps = Partial<React.ComponentProps<typeof NavigationContainer>>
 
 export const AppNavigator = observer(function AppNavigator(props: NavigationProps) {
-  const colorScheme = useColorScheme()
+    const colorScheme = useColorScheme()
 
-  useBackButtonHandler((routeName) => exitRoutes.includes(routeName))
+    useBackButtonHandler(routeName => exitRoutes.includes(routeName))
 
-  return (
-    <NavigationContainer
-      ref={navigationRef}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-      {...props}
-    >
-      <AppStack />
-    </NavigationContainer>
-  )
+    return (
+        <NavigationContainer
+            ref={navigationRef}
+            theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+            {...props}>
+            <AppStack />
+        </NavigationContainer>
+    )
 })

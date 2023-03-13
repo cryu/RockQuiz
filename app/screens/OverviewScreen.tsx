@@ -10,28 +10,28 @@ import { Button } from "react-native-paper"
 // import { useStores } from "../models"
 
 export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps<"Overview">>> = observer(
-  function OverviewScreen() {
-    // Pull in one of our MST stores
-    // const { someStore, anotherStore } = useStores()
+    function OverviewScreen() {
+        // Pull in one of our MST stores
+        // const { someStore, anotherStore } = useStores()
 
-    // Pull in navigation via hook
-    // const navigation = useNavigation()
-    return (
-      <View style={$container}>
-        <Text style={$welcomeHeading}>Welcome to RockQuiz!</Text>
-        <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
-          Press me
-        </Button>
-      </View>
-    )
-  },
+        // Pull in navigation via hook
+        // const navigation = useNavigation()
+        return (
+            <View style={$container}>
+                <Text style={$welcomeHeading}>Welcome to RockQuiz!</Text>
+                <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
+                    Press me
+                </Button>
+            </View>
+        )
+    },
 )
 
 const $container: ViewStyle = {
-  flex: 1,
-  backgroundColor: colors.background,
+    flex: 1,
+    backgroundColor: colors.background,
 }
 
 const $welcomeHeading: TextStyle = {
-  marginBottom: spacing.medium,
+    marginBottom: spacing.medium,
 }
