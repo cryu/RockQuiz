@@ -11,7 +11,7 @@ import { observer } from "mobx-react-lite"
 import React from "react"
 import { useColorScheme } from "react-native"
 import Config from "../config"
-import { OverviewScreen, WelcomeScreen } from "../screens"
+import { OverviewScreen } from "../screens"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
 /**

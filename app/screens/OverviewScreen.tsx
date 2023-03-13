@@ -8,7 +8,7 @@ import { colors, spacing } from "../theme"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../models"
 
-export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps, "Overview">> = observer(
+export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps<"Overview">>> = observer(
   function OverviewScreen() {
     // Pull in one of our MST stores
     // const { someStore, anotherStore } = useStores()
