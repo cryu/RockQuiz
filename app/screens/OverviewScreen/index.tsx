@@ -2,9 +2,10 @@ import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
 import { Text, TextStyle, View, ViewStyle } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
-import { AppStackScreenProps } from "../navigators"
-import { colors, spacing } from "../theme"
+import { AppStackScreenProps } from "../../navigators"
+import { colors, spacing } from "../../theme"
 import { Button } from "react-native-paper"
+import { QuizCard } from "./components/QuizCard"
 
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../models"
@@ -18,10 +19,7 @@ export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps<"Overview">
         // const navigation = useNavigation()
         return (
             <View style={$container}>
-                <Text style={$welcomeHeading}>Welcome to RockQuiz!</Text>
-                <Button icon="camera" mode="contained" onPress={() => console.log("Pressed")}>
-                    Press me
-                </Button>
+                <QuizCard />
             </View>
         )
     },
@@ -29,6 +27,7 @@ export const OverviewScreen: FC<StackScreenProps<AppStackScreenProps<"Overview">
 
 const $container: ViewStyle = {
     flex: 1,
+    alignItems: "center",
     backgroundColor: colors.background,
 }
 
