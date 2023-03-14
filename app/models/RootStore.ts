@@ -1,11 +1,11 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { QuizModel } from "./Quiz"
+import { QuizStoreModel } from "./Quiz"
 
 /**
  * A RootStore model.
  */
 export const RootStoreModel = types.model("RootStore").props({
-    quizStore: types.optional(QuizModel, {}),
+    quizStore: types.optional(QuizStoreModel, {}),
 })
 
 /**
